@@ -1,0 +1,143 @@
+> Request Headers
+
+User-Agent: "PostmanRuntime/7.26.8"
+
+	- This header is a string that allows servers and network peers identify
+		the application, OS, vendor, and/or version of the requesting 
+		user agent. As mentioned in class it indicates the software
+		product used by the original client.
+
+Accept: "*/*"
+
+	- This header advertises which content types, expressed as MIME types, the
+		client is able to understand. This header indicates the acceptable
+		media-types, languages and character sets on the client. */* means
+		that any MIME type is accepted.
+
+Postman-Token: "88bc2f15-9991-434f-9421-e00646c49189"
+
+	- This header is primarily used to bypass a bug in Chrome. If an 
+		XMLHttpRequest is pending and another request is sent with the same
+		parameters then Chrome returns the same response for both of them.
+		Sending a random token avoids this issue. This can also help
+		you distinguish between request on the server side.
+
+Host: "www.googleapis.com"
+
+	- This header specifies the host and port number of the server to which the
+		request is being sent. In this case, it is www.googleapis.com.
+
+Accept-Encoding: "gzip, deflate, br"
+
+	- This header advertises which content encoding, usually a compression
+		algorithm, the client is able to understand. gzip indicates a 
+		compression format using the Lempel-Ziv coding, with a 32-bit CRC.
+		deflate indicates a the lib structure, with the deflate compression 
+		algorithm. br indicates a compression format using the Brotli 
+		algorithm.
+
+Connection: "keep-alive"
+
+	- This header controls whether or not the network connection stays open after
+		the current transaction finishes. keep-alive indicates that the
+		client would like to keep the connection open. 
+
+> Response Headers
+
+Content-Type: "application/json; charset=UTF-8"
+
+	- This header is used to indicate the media type of the resource. Here,
+		application/json is the media-type indicating the MIME type
+		of the resource or the data. charset indicates the character
+		encoding standard, which in this case is UTF-8.
+
+Vary: "Origin"
+
+	- This header determines how to match future request headers to decide whether
+		a cached response can be used rather than requesting a fresh one from 
+		the origin server. Origin indicates a header name to take into account
+		when deciding whether or not a cached response can be used.
+
+Vary: "X-Origin"
+
+	- This header determines how to match future request headers to decide whether
+		a cached response can be used rather than requesting a fresh one from 
+		the origin server. X-Origin indicates a header name to take 
+		into account when deciding whether or not a cached response can 
+		be used.
+
+Vary: "Referer"
+
+	- This header determines how to match future request headers to decide whether
+		a cached response can be used rather than requesting a fresh one from 
+		the origin server. Referer indicates a header name to take 
+		into account when deciding whether or not a cached response can 
+		be used.
+
+Content-Encoding: "gzip"
+
+	- This header is used to compress the media-type. When present, its value
+		indicates which encodings were applied to the entity-body. It lets
+		the client know how to decode in order to obtain the media-type
+		referenced by the Content-The header. gzip indicates a format using 
+		Lempel-Ziv coding, with a 32-bit CRC.
+
+Date: "Tue, 26 Jan 2021 00:18:44 GMT"
+
+	- This header contains the data and time at which the message was originated.
+
+Server: "ESF"
+
+	- This header describes the software used by the origin server that handled
+		the request meaning the server that generated the response. ESF is
+		the name of the software or product that handled the request. Usually 
+		in a format similar to User-Agent.
+
+Cache-Control: "private"
+
+	- This header holds directives or instructions for caching in both requests
+		and responses. A given directive in a request does not mean the same
+		directive should be in the response. private indicates that the 
+		response may be stored only by a browser's cache, even if the response
+		is normally non-cacheable.
+
+X-XSS-Protection: "0"
+
+	- This header is a feature of Internet Explorer, Chrome and Safari that stops
+		pages from loading when they detect reflected cross-site scripting
+		(XSS) attacks. 0 disables XSS filtering.
+
+X-Frame-Options: "SAMEORIGIN"
+
+	- This header can be used to indicate whether or not a browser should be 
+		allowed to render a page in a <frame>, <iframe>, <embed>, or <object>.
+		SAMEORIGIN indicates that the page can only be displayed in a frame
+		on the same origin as the page itself. The spec leaves it up to 
+		browser vendors to decide whether this option applies to the top
+		level, the parent, or the whole chain, although it is argued that
+		the option is not very useful unless all ancestors are also in the
+		same origin.
+
+X-Content-Type-Options: "nosniff"
+
+	- This header is a marker used by the server to indicate that the MIME type
+		advertised in the Content-Type headers should not be changed and be
+		followed. nosniff blocks a request if the request destination is of
+		type: "style" and the MIME type is not text/css or "script" and the
+		MIME type is not a JavaScript MIME type. It also enables cross-origin
+		read blocking protection for the MIME-types: text/html, text/plain,
+		text/json, application/json or any other type with a JSON extension,
+		*/*+json, text/xml, application/xml or any other type with an XML
+		extension: */*+xml (excluding image/svg+xml).
+
+Alt-Svc: "h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43""
+
+	- This header is used to advertise alternative services through which the same
+		resource can be reached. An alternative service is defined by a
+		protocol/host/port combination.
+
+Transfer-Encoding: "chunked"
+
+	- This header specifies the form of encoding used to safely transfer the
+		payload body to the user. chunked indicates that data is sent in a
+		series of chunks.
